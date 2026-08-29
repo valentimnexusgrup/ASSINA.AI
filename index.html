@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abaixo-assinado da Comunidade — Em defesa do cemitério</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="gate fade-in">
+    <svg viewBox="0 0 96 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 58V22M88 58V22M8 22C8 22 8 8 48 8C88 8 88 22 88 22M28 58V30M48 58V26M68 58V30" stroke="#A8823C" stroke-width="1.4" stroke-linecap="round"/>
+      <circle cx="48" cy="14" r="2.4" fill="#A8823C"/>
+    </svg>
+  </div>
+
+  <div class="eyebrow fade-in">Registro público da comunidade</div>
+  <h1 class="fade-in">Abaixo-assinado da Comunidade</h1>
+  <h2 class="subtitle fade-in">Em defesa da finalidade do cemitério destinado à comunidade</h2>
+
+  <div class="manifesto fade-in">
+    <p class="lead">Nós, moradores e membros da comunidade abaixo-assinados, por meio deste documento, manifestamos nossa insatisfação e discordância quanto à utilização do cemitério comunitário para sepultamento de pessoas que não pertencem à comunidade ou à região.</p>
+    <p>O referido terreno foi doado por um morador da comunidade com a finalidade de servir ao próprio povo da região, como espaço destinado ao sepultamento de seus moradores e familiares. Por esse motivo, solicitamos que seja respeitada a finalidade para a qual o terreno foi doado, preservando o direito da comunidade de decidir sobre a utilização desse espaço.</p>
+    <p>Dessa forma, a comunidade manifesta seu posicionamento contrário à realização de sepultamentos de pessoas provenientes de outras localidades, quando isso não estiver de acordo com a finalidade originalmente destinada ao cemitério.</p>
+    <p>Solicitamos às autoridades e aos responsáveis que ouçam a comunidade, respeitem a finalidade do espaço e adotem as providências necessárias para garantir que o cemitério continue atendendo aos interesses dos moradores da região.</p>
+  </div>
+
+  <div class="divider"><span></span></div>
+
+  <div class="counter-box">
+    <div class="counter-number" id="counterNumber">—</div>
+    <div class="counter-label" id="counterLabel">carregando assinaturas...</div>
+  </div>
+
+  <form id="signForm" novalidate>
+    <div class="field" id="fieldNome">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" name="nome" autocomplete="name" placeholder="Seu nome como no documento">
+      <div class="field-error">Informe seu nome completo.</div>
+    </div>
+    <div class="field" id="fieldCpf">
+      <label for="cpf">CPF</label>
+      <input type="text" id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" maxlength="14">
+      <div class="field-error">Informe um CPF válido (11 dígitos).</div>
+    </div>
+    <div class="field" id="fieldTelefone">
+      <label for="telefone">Telefone</label>
+      <input type="text" id="telefone" name="telefone" inputmode="numeric" placeholder="(00) 00000-0000" maxlength="15">
+      <div class="field-error">Informe um telefone válido.</div>
+    </div>
+
+    <label class="consent">
+      <input type="checkbox" id="consent" name="consent">
+      <span>Sou morador(a) ou membro da comunidade e concordo que meu nome, CPF e telefone sejam registrados para validação deste abaixo-assinado.</span>
+    </label>
+
+    <button type="submit" id="submitBtn">Assinar o abaixo-assinado</button>
+    <div class="status-msg" id="statusMsg"></div>
+  </form>
+
+  <div class="ledger-header">
+    <div class="ledger-title">Registro de assinaturas</div>
+    <button type="button" class="export-btn" id="exportBtn">Baixar registro em PDF</button>
+  </div>
+  <div class="ledger-sub" id="ledgerSub">Lista pública com nome e data. CPF e telefone ficam registrados apenas para validação, não são exibidos aqui.</div>
+  <div class="ledger" id="ledger"></div>
+
+  <div class="footnote">
+    Este é um documento comunitário. Os dados enviados aqui ficam armazenados para dar validade ao abaixo-assinado e podem ser usados para conferência das assinaturas.
+  </div>
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
