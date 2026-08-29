@@ -1,9 +1,8 @@
-const SUPABASE_URL = 'https://mjrmbpyfcqqnajgtooob.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_31BnfsJvwNhjc50QT89Q9Q_15EFurOW';
-
-const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
 (function(){
+  const SUPABASE_URL = 'https://mjrmbpyfcqqnajgtooob.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_31BnfsJvwNhjc50QT89Q9Q_15EFurOW';
+  const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
   const form = document.getElementById('signForm');
   const submitBtn = document.getElementById('submitBtn');
   const statusMsg = document.getElementById('statusMsg');
